@@ -1,4 +1,5 @@
 FROM golang:1.21 AS builder
+LABEL maintainer="dasomell@gmail.com"
 WORKDIR /opt/build
 COPY . .
 RUN make build
