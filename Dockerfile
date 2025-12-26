@@ -1,9 +1,9 @@
-FROM golang:1.21 as builder
+FROM golang:1.21 AS builder
 WORKDIR /opt/build
 COPY . .
 RUN make build
 
-FROM node:lts as node-builder
+FROM node:22 AS node-builder
 WORKDIR /opt/build
 COPY static/terraboard-vuejs ./terraboard-vuejs
 WORKDIR /opt/build/terraboard-vuejs

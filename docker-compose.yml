@@ -5,7 +5,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: camptocamp/terraboard:devel
+    #    image: camptocamp/terraboard:devel
+    image: terraboard:local
     environment:
       AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
       AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
@@ -31,7 +32,7 @@ services:
     volumes:
       - tb-data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U gorm"]
+      test: [ "CMD-SHELL", "pg_isready -U gorm" ]
       interval: 10s
       timeout: 5s
       retries: 5
