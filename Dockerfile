@@ -1,4 +1,4 @@
-FROM golang:1.21 AS builder
+FROM golang:1.23 AS builder
 LABEL maintainer="dasomell@gmail.com"
 WORKDIR /opt/build
 COPY . .
