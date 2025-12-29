@@ -1,11 +1,13 @@
-FROM golang:1.23 AS builder
+FROM --platform=$BUILDPLATFORM golang:1.23 AS builder
 LABEL maintainer="dasomell@gmail.com"
 WORKDIR /opt/build
 COPY . .
 ARG VERSION
-RUN make build VERSION=${VERSION}
+ARG TARGETOS
+ARG TARGETARCH
+RUN GOOS=$TARGETOS GOARCH=$TARGETARCH make build VERSION=${VERSION}
 
-FROM node:22 AS node-builder
+FROM --platform=$BUILDPLATFORM node:22 AS node-builder
 WORKDIR /opt/build
 COPY static/terraboard-vuejs ./terraboard-vuejs
 WORKDIR /opt/build/terraboard-vuejs
