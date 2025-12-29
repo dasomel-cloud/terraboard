@@ -31,7 +31,7 @@ build: main.go $(FILES) ## Build the binary
 	CGO_ENABLED=0 GOOS=linux \
 		go build \
 		-trimpath \
-		-ldflags "-s -w -linkmode external -extldflags -static -X main.version=$(VERSION)" \
+		-ldflags "-s -w -X main.version=$(VERSION)" \
 		-o $(NAME) $<
 
 .PHONY: install
