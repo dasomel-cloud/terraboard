@@ -2,7 +2,7 @@
 version: "3.8"
 services:
   terraboard-dev:
-    image: terraboard:local
+    image: ghcr.io/dasomel/terraboard:v2.4.0
     environment:
       AWS_ACCESS_KEY_ID: root
       AWS_SECRET_ACCESS_KEY: mypassword

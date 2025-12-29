@@ -2,9 +2,7 @@
 version: "3.8"
 services:
   terraboard-dev:
-    build:
-      context: ../../
-      dockerfile: ./Dockerfile
+    image: ghcr.io/dasomel/terraboard:v2.4.0
     environment:
       DB_SSLMODE: disable
       CONFIG_FILE: config/config.yml
