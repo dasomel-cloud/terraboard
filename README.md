@@ -4,33 +4,33 @@
 </p>
 <p align="center">🌍 📋 A web dashboard to inspect Terraform States</p>
 <p align="center">
-  <a href="https://hub.docker.com/r/camptocamp/terraboard/" target="_blank">
-    <img alt="Docker Pulls" src="https://img.shields.io/docker/pulls/camptocamp/terraboard.svg" />
+  <a href="https://hub.docker.com/r/dasomel/terraboard/" target="_blank">
+    <img alt="Docker Pulls" src="https://img.shields.io/docker/pulls/dasomel/terraboard.svg" />
   </a>
-  <a href="https://goreportcard.com/report/github.com/camptocamp/terraboard" target="_blank">
-    <img alt="Go Report Card" src="https://goreportcard.com/badge/github.com/camptocamp/terraboard" />
+  <a href="https://goreportcard.com/report/github.com/dasomel/terraboard" target="_blank">
+    <img alt="Go Report Card" src="https://goreportcard.com/badge/github.com/dasomel/terraboard" />
   </a>
-  <a href="https://gitter.im/camptocamp/terraboard" target="_blank">
-    <img alt="Gitter" src="https://img.shields.io/gitter/room/camptocamp/terraboard.svg" />
+  <a href="https://gitter.im/dasomel/terraboard" target="_blank">
+    <img alt="Gitter" src="https://img.shields.io/gitter/room/dasomel/terraboard.svg" />
   </a>
-  <a href="https://github.com/camptocamp/terraboard/actions" target="_blank">
-    <img alt="Build Status" src="https://github.com/camptocamp/terraboard/workflows/Build/badge.svg" />
+  <a href="https://github.com/dasomel/terraboard/actions" target="_blank">
+    <img alt="Build Status" src="https://github.com/dasomel/terraboard/workflows/Build/badge.svg" />
   </a>
-  <a href="https://coveralls.io/github/camptocamp/terraboard?branch=master" target="_blank">
-    <img alt="Coverage Status" src="https://coveralls.io/repos/github/camptocamp/terraboard/badge.svg?branch=master" />
+  <a href="https://coveralls.io/github/dasomel/terraboard?branch=master" target="_blank">
+    <img alt="Coverage Status" src="https://coveralls.io/repos/github/dasomel/terraboard/badge.svg?branch=master" />
   </a>
   <a href="http://www.camptocamp.com" target="_blank">
     <img alt="By Camptocamp" src="https://img.shields.io/badge/by-camptocamp-fb7047.svg" />
   </a>
-  <a href="https://pkg.go.dev/github.com/camptocamp/terraboard" target="_blank">
-    <img alt="Documentation" src="https://pkg.go.dev/badge/github.com/camptocamp/terraboard">
+  <a href="https://pkg.go.dev/github.com/dasomel/terraboard" target="_blank">
+    <img alt="Documentation" src="https://pkg.go.dev/badge/github.com/dasomel/terraboard">
   </a>
 </p>
 <p align="center">Website: <a href="https://terraboard.io">https://terraboard.io</a></p>
 
 ---
 
-<p align="center"><strong>Caution: Terraboard's Docker registry was migrated from Dockerhub to GHCR! All new tags will be now pushed <a href="https://github.com/camptocamp/terraboard/pkgs/container/terraboard">here</a>. You can still access to old tags on the legacy Dockerhub repository.</strong></p>
+<p align="center"><strong>Caution: Terraboard's Docker registry was migrated from Dockerhub to GHCR! All new tags will be now pushed <a href="https://github.com/dasomel/terraboard/pkgs/container/terraboard">here</a>. You can still access to old tags on the legacy Dockerhub repository.</strong></p>
 
 <details><summary>Table of content</summary>
 
@@ -403,7 +403,7 @@ docker run -p 8080:8080 \
   -e DB_PASSWORD="<mypassword>" \
   -e DB_SSLMODE="disable" \
   --net terraboard \
-  ghcr.io/camptocamp/terraboard:latest
+  ghcr.io/dasomel/terraboard:latest
 ```
 
 Then point your browser to http://localhost:8080.
@@ -460,7 +460,7 @@ sign out of the proxy.
 ## Install from source
 
 ```shell
-$ go get github.com/camptocamp/terraboard
+$ go get github.com/dasomel/terraboard
 ```
 
 ## Compatibility Matrix

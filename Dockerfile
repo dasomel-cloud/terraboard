@@ -12,6 +12,7 @@ RUN yarn install
 RUN yarn run build
 
 FROM scratch
+LABEL maintainer="dasomell@gmail.com"
 WORKDIR /
 COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 COPY --from=builder /opt/build/terraboard /

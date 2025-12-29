@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="null">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/internal/terraform/getproviders/testdata/filesystem-mirror/registry.terraform.io/hashicorp/null/terraform-provider-null_invalid.zip!/" />
+      <root url="jar://$PROJECT_DIR$/internal/terraform/getproviders/testdata/filesystem-mirror/registry.terraform.io/hashicorp/null/terraform-provider-null_2.1.0_linux_amd64.zip!/" />
+      <root url="jar://$PROJECT_DIR$/internal/terraform/getproviders/testdata/filesystem-mirror/registry.terraform.io/hashicorp/null/terraform-provider-null_invalid_invalid_invalid.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
