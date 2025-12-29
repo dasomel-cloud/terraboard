@@ -2,7 +2,7 @@ NAME          				  := terraboard
 FILES         				  := $(wildcard */*.go)
 TEST_FILES    				  := $(shell go list ./... | grep -v /internal/)
 TEST_FILES_COMMA_SEPARATED    := $(shell go list ./... | grep -v /internal/ | awk '{print}' ORS=',')
-VERSION       				  := $(shell git describe --always --tags)
+VERSION       				  ?= $(shell git describe --always --tags)
 .DEFAULT_GOAL 				  := help
 
 export GO111MODULE=on
@@ -28,12 +28,11 @@ test: ## Run the tests against the codebase
 
 .PHONY: build
 build: main.go $(FILES) ## Build the binary
-	CGO_ENABLED=1 GOOS=linux \
+	CGO_ENABLED=0 GOOS=linux \
 		go build \
 		-trimpath \
-		-ldflags "-linkmode external -extldflags -static -X main.version=$(VERSION)" \
+		-ldflags "-s -w -linkmode external -extldflags -static -X main.version=$(VERSION)" \
 		-o $(NAME) $<
-	strip $(NAME)
 
 .PHONY: install
 install: ## Install the binary using local environment

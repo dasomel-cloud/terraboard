@@ -2,7 +2,8 @@ FROM golang:1.23 AS builder
 LABEL maintainer="dasomell@gmail.com"
 WORKDIR /opt/build
 COPY . .
-RUN make build
+ARG VERSION
+RUN make build VERSION=${VERSION}
 
 FROM node:22 AS node-builder
 WORKDIR /opt/build
