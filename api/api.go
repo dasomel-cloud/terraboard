@@ -36,7 +36,7 @@ func JSONError(w http.ResponseWriter, message string, err error) {
 	errObj["error"] = message
 	errObj["details"] = fmt.Sprintf("%v", err)
 	j, _ := json.Marshal(errObj)
-	if _, err := io.WriteString(w, string(j)); err != nil {
+	if _, err := w.Write(j); err != nil {
 		log.Error(err.Error())
 	}
 }
@@ -59,7 +59,7 @@ func ListTerraformVersionsWithCount(w http.ResponseWriter, r *http.Request, d *d
 		JSONError(w, "Failed to marshal states", err)
 		return
 	}
-	if _, err := io.WriteString(w, string(j)); err != nil {
+	if _, err := w.Write(j); err != nil {
 		log.Error(err.Error())
 	}
 }
@@ -86,7 +86,7 @@ func ListStateStats(w http.ResponseWriter, r *http.Request, d *db.Database) {
 		JSONError(w, "Failed to marshal states", err)
 		return
 	}
-	if _, err := io.WriteString(w, string(j)); err != nil {
+	if _, err := w.Write(j); err != nil {
 		log.Error(err.Error())
 	}
 }
@@ -118,7 +118,7 @@ func GetState(w http.ResponseWriter, r *http.Request, d *db.Database) {
 		JSONError(w, "Failed to marshal state", err)
 		return
 	}
-	if _, err := io.WriteString(w, string(j)); err != nil {
+	if _, err := w.Write(j); err != nil {
 		log.Error(err.Error())
 	}
 }
@@ -140,7 +140,7 @@ func GetLineageActivity(w http.ResponseWriter, r *http.Request, d *db.Database) 
 		JSONError(w, "Failed to marshal state activity", err)
 		return
 	}
-	if _, err := io.WriteString(w, string(j)); err != nil {
+	if _, err := w.Write(j); err != nil {
 		log.Error(err.Error())
 	}
 }
@@ -174,7 +174,7 @@ func StateCompare(w http.ResponseWriter, r *http.Request, d *db.Database) {
 		JSONError(w, "Failed to marshal state compare", err)
 		return
 	}
-	if _, err := io.WriteString(w, string(j)); err != nil {
+	if _, err := w.Write(j); err != nil {
 		log.Error(err.Error())
 	}
 }
@@ -204,7 +204,7 @@ func GetLocks(w http.ResponseWriter, _ *http.Request, sps []state.Provider) {
 		JSONError(w, "Failed to marshal locks", err)
 		return
 	}
-	if _, err := io.WriteString(w, string(j)); err != nil {
+	if _, err := w.Write(j); err != nil {
 		log.Error(err.Error())
 	}
 }
@@ -239,7 +239,7 @@ func SearchAttribute(w http.ResponseWriter, r *http.Request, d *db.Database) {
 		JSONError(w, "Failed to marshal json", err)
 		return
 	}
-	if _, err := io.WriteString(w, string(j)); err != nil {
+	if _, err := w.Write(j); err != nil {
 		log.Error(err.Error())
 	}
 }
@@ -258,7 +258,7 @@ func ListResourceTypes(w http.ResponseWriter, _ *http.Request, d *db.Database) {
 		JSONError(w, "Failed to marshal json", err)
 		return
 	}
-	if _, err := io.WriteString(w, string(j)); err != nil {
+	if _, err := w.Write(j); err != nil {
 		log.Error(err.Error())
 	}
 }
@@ -277,7 +277,7 @@ func ListResourceTypesWithCount(w http.ResponseWriter, _ *http.Request, d *db.Da
 		JSONError(w, "Failed to marshal json", err)
 		return
 	}
-	if _, err := io.WriteString(w, string(j)); err != nil {
+	if _, err := w.Write(j); err != nil {
 		log.Error(err.Error())
 	}
 }
@@ -296,7 +296,7 @@ func ListResourceNames(w http.ResponseWriter, _ *http.Request, d *db.Database) {
 		JSONError(w, "Failed to marshal json", err)
 		return
 	}
-	if _, err := io.WriteString(w, string(j)); err != nil {
+	if _, err := w.Write(j); err != nil {
 		log.Error(err.Error())
 	}
 }
@@ -318,7 +318,7 @@ func ListAttributeKeys(w http.ResponseWriter, r *http.Request, d *db.Database) {
 		JSONError(w, "Failed to marshal json", err)
 		return
 	}
-	if _, err := io.WriteString(w, string(j)); err != nil {
+	if _, err := w.Write(j); err != nil {
 		log.Error(err.Error())
 	}
 }
@@ -337,7 +337,7 @@ func ListTfVersions(w http.ResponseWriter, _ *http.Request, d *db.Database) {
 		JSONError(w, "Failed to marshal json", err)
 		return
 	}
-	if _, err := io.WriteString(w, string(j)); err != nil {
+	if _, err := w.Write(j); err != nil {
 		log.Error(err.Error())
 	}
 }
@@ -360,7 +360,7 @@ func GetUser(w http.ResponseWriter, r *http.Request) {
 		JSONError(w, "Failed to marshal user information", err)
 		return
 	}
-	if _, err := io.WriteString(w, string(j)); err != nil {
+	if _, err := w.Write(j); err != nil {
 		log.Error(err.Error())
 	}
 }
@@ -419,7 +419,7 @@ func GetPlansSummary(w http.ResponseWriter, r *http.Request, db *db.Database) {
 		JSONError(w, "Failed to marshal plans", err)
 		return
 	}
-	if _, err := io.WriteString(w, string(j)); err != nil {
+	if _, err := w.Write(j); err != nil {
 		log.Error(err.Error())
 	}
 }
@@ -445,7 +445,7 @@ func GetPlan(w http.ResponseWriter, r *http.Request, db *db.Database) {
 		JSONError(w, "Failed to marshal plan", err)
 		return
 	}
-	if _, err := io.WriteString(w, string(j)); err != nil {
+	if _, err := w.Write(j); err != nil {
 		log.Error(err.Error())
 	}
 }
@@ -472,7 +472,7 @@ func GetPlans(w http.ResponseWriter, r *http.Request, db *db.Database) {
 		JSONError(w, "Failed to marshal plans", err)
 		return
 	}
-	if _, err := io.WriteString(w, string(j)); err != nil {
+	if _, err := w.Write(j); err != nil {
 		log.Error(err.Error())
 	}
 }
@@ -513,7 +513,7 @@ func GetLineages(w http.ResponseWriter, r *http.Request, db *db.Database) {
 		JSONError(w, "Failed to marshal lineages", err)
 		return
 	}
-	if _, err := io.WriteString(w, string(j)); err != nil {
+	if _, err := w.Write(j); err != nil {
 		log.Error(err.Error())
 	}
 }

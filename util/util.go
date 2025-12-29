@@ -9,13 +9,13 @@ import (
 var basePath string
 
 // SetBasePath replaces basePath with a new one
-func SetBasePath(new string) {
-	basePath = new
+func SetBasePath(newPath string) {
+	basePath = newPath
 }
 
 // ReplaceBasePath replaces a pattern in a string, injecting basePath into it
-func ReplaceBasePath(str, old, new string) string {
-	return strings.Replace(str, old, fmt.Sprintf(new, basePath), 1)
+func ReplaceBasePath(str, old, newPattern string) string {
+	return strings.Replace(str, old, fmt.Sprintf(newPattern, basePath), 1)
 }
 
 // GetFullPath preprends basePath to a string
