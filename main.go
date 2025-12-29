@@ -125,7 +125,7 @@ var version = "undefined"
 func getVersion(w http.ResponseWriter, _ *http.Request) {
 	j, err := json.Marshal(map[string]string{
 		"version":   version,
-		"copyright": "Copyright © 2017-2021 Camptocamp",
+		"copyright": "Copyright © 2017-2021 Camptocamp, Modified by dasomel <dasomell@gmail.com> (2025)",
 	})
 	if err != nil {
 		api.JSONError(w, "Failed to marshal version", err)

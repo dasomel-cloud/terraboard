@@ -30,11 +30,13 @@ services:
     user: "${UID}:${GID}"
     expose: 
       - "9000"
+      - "9001"
     ports:
       - "9200:9000"
+      - "9201:9001"
     volumes:
       - ../data/minio-1:/data
-    command: server /data
+    command: server /data --console-address ":9001"
 
   minio-2:
     image: minio/minio:latest
@@ -44,11 +46,13 @@ services:
     user: "${UID}:${GID}"
     expose: 
       - "9000"
+      - "9001"
     ports:
       - "9300:9000"
+      - "9301:9001"
     volumes:
       - ../data/minio-2:/data
-    command: server /data
+    command: server /data --console-address ":9001"
 
   db:
     image: postgres:9.5
