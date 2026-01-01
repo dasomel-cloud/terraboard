@@ -2,7 +2,7 @@
 version: "3.8"
 services:
   terraboard-dev:
-    image: ghcr.io/dasomel/terraboard:v2.4.0
+    image: ghcr.io/dasomel/terraboard:v2.5.0
     environment:
       DB_SSLMODE: disable
       CONFIG_FILE: config/config.yml
@@ -26,7 +26,7 @@ services:
       MINIO_ROOT_USER: root
       MINIO_ROOT_PASSWORD: mypassword
     user: "${UID}:${GID}"
-    expose: 
+    expose:
       - "9000"
       - "9001"
     ports:
@@ -42,7 +42,7 @@ services:
       MINIO_ROOT_USER: admin
       MINIO_ROOT_PASSWORD: password
     user: "${UID}:${GID}"
-    expose: 
+    expose:
       - "9000"
       - "9001"
     ports:
@@ -61,11 +61,11 @@ services:
     volumes:
       - tb-data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U gorm"]
+      test: [ "CMD-SHELL", "pg_isready -U gorm" ]
       interval: 10s
       timeout: 5s
       retries: 5
-  
+
   pgadmin:
     container_name: pgadmin4_container
     image: dpage/pgadmin4

@@ -34,6 +34,7 @@
 * **Action**:
     * `browser_subagent`를 통해 GitHub Releases, Actions, GHCR 메타데이터를 확인하십시오.
     * 터미널 명령어로 빌드된 이미지의 라벨(`docker inspect`) 등을 직접 검증하여 보고하십시오.
+    * **로컬 환경 검증**: 배포된 이미지를 로컬로 풀(`docker pull`) 받은 후, 컨테이너를 실행하여 기본적인 헬스체크 및 버전 응답을 직접 확인하십시오.
 
 ---
 ## 3. (Optional) 기술 스택 컨텍스트
