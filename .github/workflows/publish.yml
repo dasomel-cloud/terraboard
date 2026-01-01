@@ -61,7 +61,9 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          annotations: ${{ steps.meta.outputs.labels }}
+          annotations: |
+            ${{ steps.meta.outputs.labels }}
+            org.opencontainers.image.description=A Web dashboard to inspect Terraform States
           sbom: true
           provenance: mode=max
           build-args: |
